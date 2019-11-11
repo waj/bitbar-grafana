@@ -7,11 +7,12 @@ apikey = Security.find_generic_password(hostname, "apikey")
 headers = HTTP::Headers{"Authorization" => "Bearer #{apikey}"}
 response = HTTP::Client.get("https://#{hostname}/api/alerts?state=alerting", headers)
 alerts = JSON.parse(response.body).as_a
+alert_prefix = {{ env("GRAFANA_ALERT_PREFIX") }} || "Grafana: "
 
 if alerts.size == 0
-  puts "Grafana: ✅"
+  puts "#{alert_prefix}✅"
 else
-  puts "Grafana: ‼️"
+  puts "#{alert_prefix}‼️"
 end
 
 puts "---"
