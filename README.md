@@ -12,6 +12,8 @@ After that, copy the generated binary `bin/grafana` into the BitBar plugins dire
 
 This plugin looks for the Grafana API key from the macOS keychain. Make sure to add an entry using the hostname as the entry name, and `apikey` as the account name. Once the item is created, make sure to run the plugin executable at least once and give permanent access to the keychain entry.
 
+You can customise the alert's prefix by setting `GRAFANA_ALERT_PREFIX` environment variable when building. It defaults to `Grafana: ` (whitespace included so you can omit it if you want).
+
 ## Contributing
 
 1. Fork it (<https://github.com/waj/bitbar-grafana/fork>)
