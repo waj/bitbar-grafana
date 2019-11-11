@@ -1,0 +1,13 @@
+name: bitbar-grafana
+version: 0.1.0
+
+authors:
+  - Juan Wajnerman <waj@manas.tech>
+
+targets:
+  grafana:
+    main: src/grafana.cr
+
+crystal: 0.31.1
+
+license: MIT
